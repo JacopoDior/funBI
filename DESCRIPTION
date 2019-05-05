@@ -1,0 +1,16 @@
+Package: funBI
+Type: Package
+Title: a Biclustering Algorithm for Functional Data
+Version: 0.1.0
+Author: Jacopo Di Iorio, Simone Vantini
+Maintainer: Jacopo Di Iorio <jacopo.diiorio@polimi.it>
+Description: An implementation of the funBI algorithm. It identifies functional
+    biclusters in a unidimensional functional dataset. 
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: cluster,
+         ggplot2,
+         progress,
+         proxy
+RoxygenNote: 6.1.1
