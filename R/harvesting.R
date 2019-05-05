@@ -175,7 +175,7 @@ funBI_harvesting <- function(list_hc, delta, perc, gap, mat, Kmax, B) {
 
     for (i in 1:n){
       pb$tick()
-      bic <- hcutter(list_hc[[i]], delta, mat)
+      bic <- delta_cutter(mat, list_hc[[i]], delta)
 
       for(j in 1:max(bic)){
         biclist[[k]] <- list(which(bic==j),
@@ -198,7 +198,7 @@ funBI_harvesting <- function(list_hc, delta, perc, gap, mat, Kmax, B) {
       pb$tick()
       totalscore <- ccscore(as.matrix(mat[ ,list_hc[[i]]$elements[1]:list_hc[[i]]$elements[2] ]))
       delta <- totalscore*perc
-      bic <- hcutter(list_hc[[i]], delta, mat)
+      bic <- delta_cutter(mat, list_hc[[i]], delta)
 
       for(j in 1:max(bic)){
         biclist[[k]] <- list(which(bic==j),
