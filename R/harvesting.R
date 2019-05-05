@@ -171,7 +171,7 @@ funBI_harvesting <- function(list_hc, delta, perc, gap, mat, Kmax, B) {
     biclist <- list()
     k <- 1
     n <- length(list_hc)
-    pb <- proglist_hcs_bar$new(total = n)
+    pb <- progress::progress_bar$new(total = n)
 
     for (i in 1:n){
       pb$tick()
@@ -193,7 +193,7 @@ funBI_harvesting <- function(list_hc, delta, perc, gap, mat, Kmax, B) {
     biclist <- list()
     k <- 1
     n <- length(list_hc)
-    pb <- proglist_hcs_bar$new(total = n)
+    pb <- progress::progress_bar$new(total = n)
     for (i in 1:n){
       pb$tick()
       totalscore <- ccscore(as.matrix(mat[ ,list_hc[[i]]$elements[1]:list_hc[[i]]$elements[2] ]))
@@ -221,7 +221,7 @@ funBI_harvesting <- function(list_hc, delta, perc, gap, mat, Kmax, B) {
     if(missing(B))
       B <- 100
 
-    pb <- proglist_hcs_bar$new(total = n)
+    pb <- progress::progress_bar$new(total = n)
 
     for (i in 1:n){
       pb$tick()
